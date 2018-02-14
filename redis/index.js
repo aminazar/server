@@ -17,6 +17,7 @@ let redisClientInit = () => {
         option['password'] = env.redisPass;
 
       let conn = env.redisURL ? env.redisURL : option;
+      console.log('redis connection: ', conn);
       redis_client = redis.createClient(conn);
       redis_sub = redis.createClient(conn);
 
