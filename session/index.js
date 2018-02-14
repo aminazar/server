@@ -9,10 +9,8 @@ let setup = (app) => {
     redis.redisClientInit()
       .then(() => {
 
-        let option = {
+        let conn = {
           "client": redis.redis_client(),
-          "host": env.redisHost,
-          "port": 6379
         };
 
         let sessionStore = new redisStore(conn);
