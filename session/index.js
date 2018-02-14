@@ -15,6 +15,7 @@ let setup = (app) => {
           "port": 6379
         };
         let conn = env.redisURL ? env.redisURL : option;
+        console.log('redis session conn', conn);
         let sessionStore = new redisStore(conn);
 
         //Initialize session with settings for production
